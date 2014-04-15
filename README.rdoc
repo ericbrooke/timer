@@ -1,0 +1,2 @@
+== Timer
+push the button at 10 seconds
