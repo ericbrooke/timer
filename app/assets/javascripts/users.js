@@ -1,37 +1,26 @@
-var startTime;
-var timeNow;
-var diffTime;
-var isCountdown = false;
+$(function() {
 
+  var startTime;
+  var diffTime;
+  var timeVal;
+  var isCountdown = false;
 
-$( "#ender" ).click(function() {
-  diffTime = Date.new() - startTime;
-  $(“.result”).val(diffTime);
+  $( "#ender" ).click(function() {
+
+    diffTime = ((new Date()) - startTime);
+    isCountdown = false;
+    $(".result").val(diffTime);
+  });
+
+  $( "#starter" ).on("click",function() {
+    isCountdown = true;
+    startTime = new Date();
+    while (isCountdown == true) {
+      var timeVal = $('#timer').text();
+      setInterval(function () {
+        if (timeVal >= 0) { isCountdown = false; }
+        $('#timer').text(timeVal - 1);
+      }, 1000);
+    };
+  });
 });
-
-$( "#starter" ).on("click",function() {
-alert(“I’ve been called”);
-
-  isCountdown = true;
-  startTime = Date.new();
-
-   function () {
-   while (isCountdown == true) {
-   function () {
-    setTimeout(1);
-    var timeNow = Date.new();
-    if $(‘#timer’).val() <= 0 {
-      isCountdown = false;
-  }
-}
-
-function updateTimer () {
-  // use me as a callback (nonblocking)
-  setTimeout(1000);
-  $('#timer').val(timeVal - 1);
-}
-}
-}
-});
-
-
