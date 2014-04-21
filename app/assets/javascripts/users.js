@@ -16,7 +16,7 @@ $(function() {
     startTime = new Date();
 
     while(isCountdown == true) {
-      // setTimeout(1);
+      setTimeout(1000);
       if($('#timer').text() <= 0){
         isCountdown = false;
       }else{
